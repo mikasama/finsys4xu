@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 
 
-# 定义wencai表创建数据类型
+# 定义wencai表的数据类型
 class CreateWencai(BaseModel):
     stockname: str
     stockcode: str

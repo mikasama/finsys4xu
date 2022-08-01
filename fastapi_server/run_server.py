@@ -20,7 +20,7 @@ myapp = FastAPI(
 )
 
 # 添加子应用路由，在swagger中将以分类展示
-myapp.include_router(financial_app, prefix='/financial', tags=['金融数据服务接口'])
+myapp.include_router(financial_app, prefix='/financial', tags=['金融数据服务'])
 
 # 测试数据
 @myapp.get('/{ids}')
