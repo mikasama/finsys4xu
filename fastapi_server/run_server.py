@@ -5,6 +5,7 @@
 
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from financial import financial_app
 
@@ -18,6 +19,17 @@ myapp = FastAPI(
     docs_url='/docs',
     redoc_url='/redoc'
 )
+
+# 添加跨域配置即其他中间件
+myapp.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],  # 允许访问的源
+    allow_credentials=True,  # 支持 cookie
+    allow_methods=["*"],  # 允许使用的请求方法
+    allow_headers=["*"]  # 允许携带的 Headers
+)
+
+
 
 # 添加子应用路由，在swagger中将以分类展示
 myapp.include_router(financial_app, prefix='/financial', tags=['金融数据服务'])
