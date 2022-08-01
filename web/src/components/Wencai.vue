@@ -18,47 +18,47 @@
             style="width: 100%">
 
             <el-table-column
-                prop="Id"
+                prop="id"
                 label="序号"
                 width="100px">
             </el-table-column>
             <el-table-column
-                prop="Stockname"
+                prop="stockname"
                 label="股票名称"
                 width="180px">
             </el-table-column>
             <el-table-column
-                prop="Stockcode"
+                prop="stockcode"
                 label="股票代码"
                 width="180px">
             </el-table-column>
             <el-table-column
-                prop="Wencaiscore"
+                prop="wencaiscore"
                 label="问财评分"
                 width="180px">
             </el-table-column>
             <el-table-column
-                prop="Shortcommnet"
+                prop="shortcommnet"
                 label="短评"
                 width="180px">
             </el-table-column>
             <el-table-column
-                prop="Langcommnet"
+                prop="langcommnet"
                 label="长评"
                 width="180px">
             </el-table-column>
             <el-table-column
-                prop="Morecontent"
+                prop="morecontent"
                 label="更多评论"
                 width="250px">
             </el-table-column>
             <el-table-column
-                prop="Createtime"
+                prop="createtime"
                 label="创建时间"
                 width="180px">
             </el-table-column>
             <el-table-column
-                prop="Updatetime"
+                prop="updatetime"
                 label="更新时间"
                 width="180px">
             </el-table-column>
@@ -95,6 +95,13 @@
                 axios.get(url)
                 .then(function (response) {
                     that.wencaiData = response.data
+                    // var i
+                    // that.wencaiData = []
+                    // for (i in response.data)
+                    // {
+                    //     that.wencaiData.push(i)
+                    //     console.log(i)
+                    // }  
                     that.loadingStatus = false
                     console.log(that.wencaiData)
                     console.log(that.wencaiData[1])
