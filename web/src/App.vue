@@ -4,7 +4,8 @@
       <el-aside width="180px">
         徐氏金融管理系统
           <ul></ul>
-          <ul>菜单1</ul>
+          <router-link to="/wencai">问财评分</router-link>
+          <ul><router-link to="/city">城市列表</router-link></ul>
           <ul>菜单2</ul>
           <ul>菜单3</ul>
           <ul> </ul>
@@ -21,12 +22,16 @@
         <el-header>Header</el-header>
         <el-main>
           <!-- <City>city component</City> -->
+          <router-view>
           <Wencai>wencai page</Wencai>
+          </router-view>
           <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
         </el-main>
         
       </el-container>
     </el-container>
+
+    <router-view></router-view>
     
   </div>
 </template>
@@ -38,11 +43,11 @@ import Wencai from './components/Wencai.vue'
 
 export default {
   name: 'App',
-  components: {
-    // HelloWorld,
-    // City,
-    Wencai
-  }
+  // components: {
+  //   // HelloWorld,
+  //   // City,
+  //   // Wencai
+  // }
 }
 </script>
 
